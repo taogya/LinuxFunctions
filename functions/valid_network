@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# arguments =================
+# returns ===================
+# e.g.
+# # ng
+# $ valid_network
+# can not access to internet.
+# # ok
+# $ valid_network
+
+if ! ping -c 4 8.8.8.8 > /dev/null 2>&1; then
+    echo "can not access to internet."
+    exit 1
+fi
