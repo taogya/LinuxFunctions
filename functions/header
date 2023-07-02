@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# arguments =================
+# $1: message
+# $2: spacer, default '='
+# $3: max length, default 80
+# returns ===================
+# e.g.
+# $ header "message " "=-" 20
+# message=-=-=-=-=-=-
+
+spacer=${2:-=}
+length=${3:-80}
+echo "$1"$(seq -s"${spacer}" $((length+1))|tr -d '[:digit:]') | cut -c -"${length}"
